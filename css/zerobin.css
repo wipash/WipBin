@@ -6,15 +6,12 @@ Licensed under the BSD License. - http://yuilibrary.com/license/    */
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
 
 html  {
-background-color:#455463;
 color:white;
 min-height:100%;
-background-image: linear-gradient(bottom, #0F1823 0%, #455463 100%);
-background-image: -o-linear-gradient(bottom, #0F1823 0%, #455463 100%);
-background-image: -moz-linear-gradient(bottom, #0F1823 0%, #455463 100%);
-background-image: -webkit-linear-gradient(bottom, #0F1823 0%, #455463 100%);
-background-image: -ms-linear-gradient(bottom, #0F1823 0%, #455463 100%);
-background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0F1823), color-stop(1, #455463));
+overflow-y:scroll;
+-webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%;
+background: url("../img/bg.png") repeat scroll 0 0 transparent;
 }
 
 body {
@@ -22,6 +19,7 @@ font-family: Arial, Helvetica, sans-serif;
 font-size: 0.8em;
 margin-bottom:15px;
 padding-left:60px; padding-right:60px;
+background: url("../img/bg.png") repeat scroll 0 0 transparent;
 }
  
 a  { color:#0F388F; }
@@ -54,7 +52,7 @@ position:relative;
 bottom:8px;} 
   
 h3 { 
-color:#94a3b4; 
+color:#232741; 
 font-size:0.7em; 
 display:inline; 
 position:relative; 
@@ -62,16 +60,22 @@ bottom:8px;}
 
 #aboutbox { 
 font-size:0.85em;
-color: #94a3b4; 
+color: #232741;
 padding: 4px 8px 4px 16px;
-position:relative; 
 top:10px;
-border-left: 2px solid #94a3b4;
+border-left: 2px solid #232741;
 float:right;  
-width:60%;
+width:50%;
+margin-top:20px;
 }
 
-div#aboutbox a { color: #94a3b4; } 
+#version {
+position:absolute;
+float:left;
+margin-top:70px;
+margin-left:15px;
+}
+div#aboutbox a { color: #232741; } 
 textarea#message,div#cleartext,.replymessage, code {
 clear:both;
 color:black;
@@ -110,6 +114,20 @@ div#pasteresult button { margin-left:11px }
 div#deletelink { float:right; }
 div#toolbar, div#status { margin-bottom:5px; }
 #copyhint { color: #666; font-size:8pt; }
+#warning { color: #CC0202; font-size:8pt; }
+
+div#shortenurlresult { 
+background-color:#1F2833;
+color:white;
+padding:4px 12px; 
+clear:both;
+-moz-box-shadow: inset 0px 2px 2px #000;
+-webkit-box-shadow: inset 0px 2px 2px #000;
+box-shadow: inset 0px 2px 5px #000;
+}
+
+div#shortenurlresult a { color:white; }
+
 
 button,.button,div#expiration {
 color:#fff;
@@ -174,6 +192,7 @@ bottom:1px; /* WTF ? Why is this shifted by 1 pixel ? */
 div#expiration select {
 color:#eee;
 background: transparent;
+-webkit-appearance: none;
 border: none;
 }
 
@@ -185,14 +204,14 @@ background-color:#414D5A;
 }
 
 div#remainingtime {
-color: #94a3b4; 
+color: #232741; 
 display:inline;
 font-size:0.85em;
 }
 
 .foryoureyesonly {
-color: yellow !important;
-font-size: 1em !important;
+color: #CC0202 !important; 
+font-size:8pt !important;
 font-weight:bold !important;
 }
 
@@ -249,10 +268,9 @@ min-width:200px;
 }
 
 h4 {
-font-size:1.2em;
-color: #94A3B4;
-font-style:italic;
-font-weight:bold; 
+font-size:2em;
+color: #232741;
+font-family: 'Lobster', cursive;
 position:relative;
 margin-left:30px;
 }
@@ -365,4 +383,17 @@ pre a:hover {
 color:#64B9C6;
 }
 
+#logo {
 
+	float: left;
+	margin-right: 50px;
+	margin-top:20px;
+}
+
+.header {
+    background: url("#") repeat-x scroll left top transparent;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 960px;
+}
