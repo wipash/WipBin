@@ -1,17 +1,27 @@
-ZeroBin 0.19 Alpha
+WipBin 0.19 Alpha
+==================
 
-==== THIS IS ALPHA SOFTWARE - USE AT YOUR OWN RISKS ====
+***THIS IS ALPHA SOFTWARE - USE AT YOUR OWN RISK***
 
-ZeroBin is a minimalist, opensource online pastebin where the server 
+WipBin is a minimalist, opensource online pastebin where the server 
 has zero knowledge of pasted data. Data is encrypted/decrypted in the 
 browser using 256 bits AES. 
+
+This fork includes a simple URL shortener which uses MySQL as a DB.
+Please note that this shortener seriously degrades the security and privacy of your pastes, as such you should only use it for non-critical pastes.
+
+
+------------------------------------------------------------------------------
+
+WipBin is based on ZeroBin by Sébastien Sauvage
+-----------------------------------------------
 
 More information on the project page:
 http://sebsauvage.net/wiki/doku.php?id=php:zerobin
 
 ------------------------------------------------------------------------------
 
-Copyright (c) 2012 Sébastien SAUVAGE (sebsauvage.net)
+Copyright &copy; 2012 Sébastien SAUVAGE (sebsauvage.net)
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from 
