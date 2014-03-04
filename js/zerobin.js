@@ -636,7 +636,7 @@ $(function() {
     }
 
     // Add event handlers on buttons
-    addClickEvent('title', goHome);
+    addClickEvent('logo', goHome);
     addClickEvent('newbutton', goHome);
     addClickEvent('sendbutton', send_data);
     addClickEvent('clonebutton', clonePaste);
