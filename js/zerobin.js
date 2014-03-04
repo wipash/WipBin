@@ -377,24 +377,9 @@ function send_data() {
 
                 $('div#pastelink').html('Your paste is <a id="pasteurl" href="' + url + '">' + url + '</a> <span id="copyhint">(Hit CTRL+C to copy)</span>');
                 $('div#deletelink').html('<a href="' + deleteUrl + '">Delete link</a>');
-                $('div#urlshortener').html('<a id="shortenurl" href="#">Shorten this URL?</a> <span id="warning">Warning: This will seriously compromise the security of your post</span>');
                 $('div#pasteresult').show();
-                $('div#shortenurlresult').show();
                 selectText('pasteurl'); // We pre-select the link so that the user only has to CTRL+C the link.
-                
-                $('a#shortenurl').on('click', function(){
-                    $.ajax({
-                        type: 'POST',
-                        data: { scriptLocation: scriptLocation(), dataID: data.id, dataKey: randomkey }, 
-                        url: 'binshortener.php', 
-                        complete: function (XMLHttpRequest, textStatus) {
-                            $('div#urlshortener').html('<a id="shortenurl" href="' + XMLHttpRequest.responseText + '">' + XMLHttpRequest.responseText + '</a> <span id="copyhint">(Hit CTRL+C to copy)</span> <span id="warning">Warning: The security of this post has now been compromised</span>');
-                            $('div#pastelink').html('Your paste is <a id="pasteurl" href="' + url + '">' + url + '</a>');
-                                selectText('shortenurl');
-                        }
-                    });
-                });
-                
+
                 
                 setElementText($('div#cleartext'), $('textarea#message').val());
                 urls2links($('div#cleartext'));
@@ -449,7 +434,6 @@ function stateNewPaste() {
     $('div#syntaxcoloringoption').show();
     $('button#newbutton').show();
     $('div#pasteresult').hide();
-    $('div#shortenurlresult').hide();
     $('textarea#message').text('');
     $('textarea#message').show();
     $('div#cleartext').hide();
@@ -478,7 +462,6 @@ function stateExistingPaste() {
     $('div#syntaxcoloringoption').hide();    
     $('button#newbutton').show();
     $('div#pasteresult').hide();
-    $('div#shortenurlresult').hide();
     $('textarea#message').hide();
     $('div#cleartext').show();
 }
