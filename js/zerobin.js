@@ -190,12 +190,6 @@ function applySyntaxColoring()
  * @param string key : decryption key
  * @param array comments : Array of messages to display (items = array with keys ('data','meta')
  */
-/**
- * Show decrypted text in the display area, including discussion (if open)
- *
- * @param string key : decryption key
- * @param array comments : Array of messages to display (items = array with keys ('data','meta')
- */
 function displayMessages(key, comments) {
     try { // Try to decrypt the paste.
         var cleartext = zeroDecipher(key, comments[0].data);
@@ -237,12 +231,10 @@ function displayMessages(key, comments) {
             if ($(cname).length) {
                 place = $(cname);
             }
-
             var divComment = $('<div class="comment" id="comment_' + comment.meta.commentid+'">'
                                + '<div class="commentmeta"><span class="nickname"></span><span class="commentdate"></span></div><div class="commentdata"></div>'
                                + '<button id="replyToComm' + comment.meta.commentid + '">Reply</button>'
                                + '</div>');
-
             setElementText(divComment.find('div.commentdata'), cleartext);
             // Convert URLs to clickable links in comment.
             urls2links(divComment.find('div.commentdata'));
@@ -375,12 +367,13 @@ function send_data() {
                 var deleteUrl = scriptLocation() + "?pasteid=" + data.id + '&deletetoken=' + data.deletetoken;
                 showStatus('');
 
-                $('div#pastelink').html('Your paste is <a id="pasteurl" href="' + url + '">' + url + '</a> <span id="copyhint">(Hit CTRL+C to copy)</span>');
+                //Only show the hash if enabled in config
+                var visibleURL = data.showHash ? url : scriptLocation() + "?" + data.id;
+                $('div#pastelink').html('Your paste is <a id="pasteurl" href="' + url + '">' + visibleURL + '</a> <span id="copyhint">(Hit CTRL+C to copy)</span>');
                 $('div#deletelink').html('<a href="' + deleteUrl + '">Delete link</a>');
                 $('div#pasteresult').show();
                 selectText('pasteurl'); // We pre-select the link so that the user only has to CTRL+C the link.
 
-                
                 setElementText($('div#cleartext'), $('textarea#message').val());
                 urls2links($('div#cleartext'));
 
@@ -470,9 +463,10 @@ function stateExistingPaste() {
   */
 function rawText()
 {
-    var paste = $('div#cleartext').html();
-    var newDoc = document.open('text/html', 'replace');
-    newDoc.write('<pre>'+paste+'</pre>');
+    history.pushState(document.title, document.title, 'document.txt');
+    var paste = $('div#cleartext').text();
+    var newDoc = document.open('text/plain', 'replace');
+    newDoc.write(paste);
     newDoc.close();
 }
 
@@ -593,7 +587,7 @@ function addClickEvent(id, callback)
 }
 
 $(function() {
-    
+
     function onBurnAfterReadingCheckboxChange() {
         if ($("input#burnafterreading").is(':checked') ) { 
             $('div#opendisc').addClass('buttondisabled');
