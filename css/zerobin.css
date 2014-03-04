@@ -116,18 +116,6 @@ div#toolbar, div#status { margin-bottom:5px; }
 #copyhint { color: #666; font-size:8pt; }
 #warning { color: #CC0202; font-size:8pt; }
 
-div#shortenurlresult { 
-background-color:#1F2833;
-color:white;
-padding:4px 12px; 
-clear:both;
--moz-box-shadow: inset 0px 2px 2px #000;
--webkit-box-shadow: inset 0px 2px 2px #000;
-box-shadow: inset 0px 2px 5px #000;
-}
-
-div#shortenurlresult a { color:white; }
-
 
 button,.button,div#expiration {
 color:#fff;
