@@ -10,11 +10,8 @@
 <script src="js/rawdeflate.js?{$VERSION|rawurlencode}#"></script>
 <script src="js/rawinflate.js?{$VERSION|rawurlencode}#"></script>
 <script src="js/zerobin.js?{$VERSION|rawurlencode}#"></script>
-
-
 <link type="text/css" rel="stylesheet" href="js/highlight.styles/monokai.css?{$VERSION|rawurlencode}#">
 <script src="js/highlight.pack.js?{$VERSION|rawurlencode}#"></script>
-
 
 <!--[if lt IE 10]>
 <style> body {padding-left:60px;padding-right:60px;} div#ienotice {display:block;} </style>
@@ -35,14 +32,14 @@
             <img alt="logo" src="../img/logo.png">
         </a>
         </div>
-        <div id="aboutbox">
+      <div id="aboutbox">
             P.mcgrath.net.nz is based on ZeroBin is a minimalist, opensource online pastebin where the server has zero knowledge of pasted data.
-            Data is encrypted/decrypted <i>in the browser</i> using 256 bits AES. 
+          Data is encrypted/decrypted <i>in the browser</i> using 256 bits AES. 
             More information on <a href="http://sebsauvage.net/wiki/doku.php?id=php:zerobin">ZeroBin's project page</a>.<br />
             <span style="text-decoration:blink;font-size:10pt;color:#a4b3c4;">&#9654;</span> Note: This is not a guaranteed service: 
             Data may be deleted anytime (although it probably won't). Kittens will die if you abuse this service.
         </div>
-    </div>
+</div>
     <noscript><div class="nonworking">Javascript is required for P.mcgrath.net.nz to work.<br>Sorry for the inconvenience.</div></noscript>
     <div id="oldienotice" class="nonworking">P.mcgrath.net.nz requires a modern browser to work.</div>
     <div id="ienotice">Still using Internet Explorer ? &nbsp;Do yourself a favor, switch to a modern browser: 
@@ -54,10 +51,10 @@
     <div id="status">{$STATUS}</div>
     <div id="errormessage" style="display:none">{$ERRORMESSAGE|htmlspecialchars}</div>
     <div id="toolbar">
-    <button id="newbutton" onclick="window.location.href=scriptLocation();return false;" style="display:none;"><img src="img/icon_new.png#" width="11" height="15" />New</button>
-    <button id="sendbutton" onclick="send_data();return false;" style="display:none;"><img src="img/icon_send.png#" width="18" height="15" />Send</button>
-    <button id="clonebutton" onclick="clonePaste();return false;" style="display:none;"><img src="img/icon_clone.png#" width="15" height="17" />Clone</button>
-    <button id="rawtextbutton" onclick="rawText();return false;" style="display:none; "><img src="img/icon_raw.png#" width="15" height="15" style="padding:1px 0px 1px 0px;"/>Raw text</button>
+    <button id="newbutton" style="display:none;"><img src="img/icon_new.png#" width="11" height="15" />New</button>
+    <button id="sendbutton" style="display:none;"><img src="img/icon_send.png#" width="18" height="15" />Send</button>
+    <button id="clonebutton" style="display:none;"><img src="img/icon_clone.png#" width="15" height="17" />Clone</button>
+    <button id="rawtextbutton" style="display:none; "><img src="img/icon_raw.png#" width="15" height="15" style="padding:1px 0px 1px 0px;"/>Raw text</button>
       <div id="expiration" style="display:none;">Expires: 
       <select id="pasteExpiration" name="pasteExpiration">
         <option value="5min">5 minutes</option>
