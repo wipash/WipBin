@@ -36,7 +36,7 @@ $cfg["expireSelected"] = "1month";
  * This is NOT the per-default selected option
  * Make sure the value exists in $cfg["expire"]
  */
-$cfg["expireDefault"] = "never";
+$cfg["expireDefault"] = "1month";
 
 /*
  * Set this to true to default-select
@@ -70,6 +70,6 @@ $cfg["showHash"] = true;
 /*
  * Set this to false to disable the discussion system
  */
-$cfg["enableDiscussionSystem"] = true;
+$cfg["enableDiscussionSystem"] = false;
 
 ?>
