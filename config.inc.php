@@ -72,4 +72,14 @@ $cfg["showHash"] = true;
  */
 $cfg["enableDiscussionSystem"] = false;
 
+
+/*
+ * Google analytics options, possible privacy issues with enabling this
+ */
+$cfg["enableGoogleAnalytics"] = false;
+$cfg["googleAnalyticsTrackingID"] = "XX-99999999-9";
+$cfg["googleAnalyticsTrackingSite"] = "site.com";
+
+
+
 ?>
