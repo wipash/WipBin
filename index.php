@@ -437,8 +437,6 @@ else if (!empty($_SERVER['QUERY_STRING']))  // Return an existing paste.
 require_once "lib/rain.tpl.class.php";
 header('Content-Type: text/html; charset=utf-8');
 
-header('Strict-Transport-Security: max-age=86400');
-
 if ($cfg["enableGoogleAnalytics"])
 {
     header("Content-Security-Policy: script-src 'self' www.google-analytics.com");
